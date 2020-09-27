@@ -1,14 +1,12 @@
 import requests
 import logging 
 
-
 from bs4 import BeautifulSoup
 
 
 
-
-def parse_urls():
-    print("Start parse url\n")
+def parse_urls(query):
+    print(f"query search = {query}\n")
     list_urls = []
 
     count_page = 1
@@ -19,7 +17,7 @@ def parse_urls():
 
 
         try:
-            main_url = f"https://habr.com/ru/search/page{count_page}/?q=python&target_type=posts&flow=&order_by=relevance"
+            main_url = f"https://habr.com/ru/search/page{count_page}/?q={query}&target_type=posts&flow=&order_by=relevance"
             result = requests.get(main_url)
             soup = BeautifulSoup(result.text, "html.parser")
 
@@ -37,10 +35,11 @@ def parse_urls():
 
 
             count_page += 1
-
+            
         except Exception as ex:
             logging.error(ex)
 
+    
     return list_urls
     
 

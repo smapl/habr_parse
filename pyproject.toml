@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "parse_news"
+name = "habr_parse"
 version = "0.1.0"
 description = ""
 authors = ["smapl"]
