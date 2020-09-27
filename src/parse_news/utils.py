@@ -18,4 +18,3 @@ def divide_to_batches(data: list, count):
 
     return batches
 
-print(give_args())
