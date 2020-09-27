@@ -2,11 +2,9 @@ from multiprocessing import Pool
 from tqdm import tqdm
 
 
-
 from .parse_data import parse_data
 from .parse_urls import parse_urls
 from .utils import divide_to_batches, give_args
-
 
 
 def handler():
@@ -23,6 +21,4 @@ def handler():
             for i, _ in enumerate(pool.imap_unordered(parse_data, batches)):
                 pbar.update()
 
-        
-    
-    print("\nall data is parsed!!!")
+    return 

@@ -6,8 +6,6 @@ from bs4 import BeautifulSoup
 from pymongo import MongoClient
 
 
-
-
 def parse_data(list_urls):
     
 

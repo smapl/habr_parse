@@ -12,10 +12,6 @@ def parse_urls(query):
     count_page = 1
     while True:
 
-        if count_page >= 2:
-            return list_urls
-
-
         try:
             main_url = f"https://habr.com/ru/search/page{count_page}/?q={query}&target_type=posts&flow=&order_by=relevance"
             result = requests.get(main_url)
