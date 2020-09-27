@@ -11,9 +11,6 @@ from tqdm import tqdm
 def parse_data(list_urls):
     
 
-    #print("\nstart parse data")
-
-
     client = MongoClient()
     db = client["parse_habr"]
     collection = db["habr_python"]
@@ -49,19 +46,18 @@ def parse_data(list_urls):
             request_to_mongo.append(document)
 
             if len(request_to_mongo) >= 10:
-                #collection.insert_many(request_to_mongo)
+                collection.insert_many(request_to_mongo)
                 request_to_mongo = []
 
-            #print(f"{count_parse_urls} - {url} --- is parsed;")
 
         except Exception as ex:
             logging.error(ex)
 
-    # try:
-    #     collection.insert_many(request_to_mongo)
+    try:
+        collection.insert_many(request_to_mongo)
 
-    # except Exception as ex:
-    #     logging.error(ex)
+    except Exception as ex:
+        logging.error(ex)
     
 
     client.close()
