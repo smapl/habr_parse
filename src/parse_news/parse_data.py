@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from pymongo import MongoClient
-from tqdm import tqdm
+
 
 
 
