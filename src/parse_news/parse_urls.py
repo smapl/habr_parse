@@ -8,12 +8,11 @@ from bs4 import BeautifulSoup
 
 
 def parse_urls():
-    print("start parse url")
+    print("Start parse url\n")
     list_urls = []
 
     count_page = 1
     while True:
-        print(count_page)
 
         if count_page >= 2:
             return list_urls
@@ -38,9 +37,6 @@ def parse_urls():
 
 
             count_page += 1
-
-
-
 
         except Exception as ex:
             logging.error(ex)
