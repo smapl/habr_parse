@@ -10,6 +10,7 @@ requests = "^2.24.0"
 bs4 = "^0.0.1"
 pymongo = "^3.11.0"
 tqdm = "^4.49.0"
+loguru = "^0.5.3"
 
 [tool.poetry.dev-dependencies]
 pylint = "^2.6.0"

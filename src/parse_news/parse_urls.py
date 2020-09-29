@@ -1,12 +1,13 @@
 import requests
-import logging 
+from loguru import logger  
 
 from bs4 import BeautifulSoup
 
 
 
+
 def parse_urls(query):
-    print(f"query search = {query}\n")
+    logger.info(f"query search = {query}\n")
     list_urls = []
 
     count_page = 1
@@ -33,8 +34,8 @@ def parse_urls(query):
             count_page += 1
             
         except Exception as ex:
-            logging.error(ex)
-
+            logger.error(ex)
+            break
     
     return list_urls
     

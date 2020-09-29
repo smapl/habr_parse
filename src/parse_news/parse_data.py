@@ -1,13 +1,10 @@
-import logging
-
 import requests
 from bs4 import BeautifulSoup
 
 from pymongo import MongoClient
-
+from loguru import logger
 
 def parse_data(list_urls):
-    
 
     client = MongoClient()
     db = client["parse_habr"]
@@ -49,13 +46,13 @@ def parse_data(list_urls):
 
 
         except Exception as ex:
-            logging.error(ex)
+            logger.error(ex)
 
     try:
         collection.insert_many(request_to_mongo)
 
     except Exception as ex:
-        logging.error(ex)
+        logger.error(ex)
     
 
     client.close()
